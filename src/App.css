@@ -1,0 +1,8 @@
+.min-height-90vh {
+	min-height: 90vh;
+}
+canvas {
+	background: #3a2e29 !important;
+	width: 80% !important;
+	height: 600px !important;
+}

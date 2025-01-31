@@ -1,0 +1,312 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 7344,
+      "max": [
+        14.04810619354248,
+        1.4193271398544312,
+        0.7085253596305847
+      ],
+      "min": [
+        -14.392807960510254,
+        -0.7656223773956299,
+        -0.9898583292961121
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 88128,
+      "componentType": 5126,
+      "count": 7344,
+      "max": [
+        0.9999039769172668,
+        0.9998282790184021,
+        0.9999415278434753
+      ],
+      "min": [
+        -0.997974157333374,
+        -0.9998704195022583,
+        -0.9998924732208252
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 7344,
+      "max": [
+        0.9999998807907104,
+        0.9999407529830933
+      ],
+      "min": [
+        0.02165793441236019,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 31527,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 176256,
+      "componentType": 5126,
+      "count": 5197,
+      "max": [
+        12.34693717956543,
+        1.0152103900909424,
+        0.8697780966758728
+      ],
+      "min": [
+        -13.713201522827148,
+        -1.0266542434692383,
+        -1.1897871494293213
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 238620,
+      "componentType": 5126,
+      "count": 5197,
+      "max": [
+        0.2608017921447754,
+        0.9994319081306458,
+        0.9999244809150696
+      ],
+      "min": [
+        -0.9999769330024719,
+        -0.9998342990875244,
+        -0.9998314380645752
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 58752,
+      "componentType": 5126,
+      "count": 5197,
+      "max": [
+        0.9917543530464172,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 126108,
+      "componentType": 5125,
+      "count": 27963,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "dylanheyes (https://sketchfab.com/dylanheyes)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/luxury-pen-11c3a825d8cd4c16ab2edc3f5613fd84",
+      "title": "Luxury Pen"
+    },
+    "generator": "Sketchfab-15.17.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 237960,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 100328,
+      "byteOffset": 237960,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 300984,
+      "byteOffset": 338288,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 639272,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Chrome",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.8,
+          0.8,
+          1.0
+        ],
+        "roughnessFactor": 0.0
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Body",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Luxury Pen_Chrome_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Luxury Pen_Body_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.18730923533439636,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.1591005158635755e-17,
+        -0.18730923533439636,
+        0.0,
+        0.0,
+        0.18730923533439636,
+        4.1591005158635755e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Luxury Pen.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        1.3864030382639325,
+        7.374072283897026e-07,
+        -99.99039660134596,
+        0.0,
+        -11.625788916232926,
+        99.32177529743788,
+        -0.1611950385530185,
+        0.0,
+        99.31223703021713,
+        11.626907258288652,
+        1.3770001961107623,
+        0.0,
+        13.414454460144043,
+        5.286011695861816,
+        111.66000366210938,
+        1.0
+      ],
+      "name": "Luxury Pen"
+    },
+    {
+      "mesh": 0,
+      "name": "Luxury Pen_Chrome_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Luxury Pen_Body_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
