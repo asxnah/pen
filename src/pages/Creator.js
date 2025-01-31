@@ -1,6 +1,45 @@
 import PenForm from '../componets/penForm.js';
+import React, { useState } from 'react';
 
 function Creator() {
+	function generateId(length = 9) {
+		return (
+			Date.now().toString(36) +
+			Math.random()
+				.toString(36)
+				.slice(2, 2 + length)
+		);
+	}
+
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [number, setNumber] = useState('');
+	const [status] = useState('В процессе');
+
+	const add = (name, email, number, status) => {
+		fetch('http://localhost:3000/orders', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				id: generateId(),
+				name: name,
+				email: email,
+				number: number,
+				status: status,
+			}),
+		})
+			.then((response) => response.json())
+			.then(() => alert('Ваш заказ передан на обработку'))
+			.catch(() => alert('Что-то пошло не так'));
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		add(name, email, number, status);
+	};
+
 	return (
 		<>
 			<main className="container min-height-90vh p-4">
@@ -11,7 +50,11 @@ function Creator() {
 					<form className="col-12 col-md-6">
 						<div className="mb-3">
 							<label className="form-label">Ваше имя</label>
-							<input type="email" className="form-control" />
+							<input
+								type="email"
+								className="form-control"
+								onChange={(e) => setName(e.target.value)}
+							/>
 							<div id="emailHelp" className="form-text">
 								Это обязательное поле для оформления заказа.
 							</div>
@@ -35,10 +78,10 @@ function Creator() {
 				aria-hidden="true"
 			>
 				<div className="modal-dialog">
-					<form className="modal-content">
+					<form className="modal-content" onSubmit={handleSubmit}>
 						<div className="modal-header">
 							<h1 className="modal-title fs-5" id="exampleModalLabel">
-								Ваш заказ, Имя
+								Ваш заказ, {name}
 							</h1>
 							<button
 								type="button"
@@ -52,19 +95,37 @@ function Creator() {
 								<label htmlFor="fname" className="form-label">
 									Имя *
 								</label>
-								<input type="text" className="form-control" id="fname" />
+								<input
+									type="text"
+									className="form-control"
+									id="fname"
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+								/>
 							</div>
 							<div className="mb-3">
 								<label htmlFor="number" className="form-label">
 									Номер телефона *
 								</label>
-								<input type="tel" className="form-control" id="number" />
+								<input
+									type="tel"
+									className="form-control"
+									id="number"
+									value={number}
+									onChange={(e) => setNumber(e.target.value)}
+								/>
 							</div>
 							<div className="mb-3">
-								<label htmlFor="number" className="form-label">
+								<label htmlFor="email" className="form-label">
 									Электронная почта *
 								</label>
-								<input type="email" className="form-control" id="email" />
+								<input
+									type="email"
+									className="form-control"
+									id="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
 							</div>
 						</div>
 						<div className="modal-footer">
@@ -75,7 +136,7 @@ function Creator() {
 							>
 								Отменить
 							</button>
-							<button type="button" className="btn btn-dark">
+							<button type="submit" className="btn btn-dark">
 								Заказать
 							</button>
 						</div>
