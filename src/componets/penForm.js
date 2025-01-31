@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 
-function PenForm() {
+function PenForm(props) {
     const containerRef = useRef(null);
+    const [textMesh, setTextMesh] = useState(null); // Состояние для текстовой меш-сетки
 
     useEffect(() => {
         const container = containerRef.current;
@@ -31,7 +32,7 @@ function PenForm() {
             pen = gltf.scene;
             pen.scale.set(0.4, 0.4, 0.3); // Начните с масштаба 1
             scene.add(pen);
-            addTextToModel(pen); // Добавляем текст после загрузки модели
+            addTextToModel(pen, props.text); // Добавляем текст после загрузки модели
         }, undefined, function (error) {
             console.error('Error loading GLTF model:', error);
         });
@@ -46,7 +47,6 @@ function PenForm() {
         const directionalLight2 = new THREE.DirectionalLight(0xFFFFFF, 100);
         directionalLight2.position.set(-1, -1, 1);
         scene.add(directionalLight2);
-
 
         // Управление камерой
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -71,10 +71,10 @@ function PenForm() {
         };
     }, []);
 
-    const addTextToModel = (model) => {
+    const addTextToModel = (model, text) => {
         const fontLoader = new FontLoader();
         fontLoader.load('/fonts/Playfair Display_Regular.json', (font) => {
-            const textGeometry = new TextGeometry('Мега крутой супер дупер', {
+            const textGeometry = new TextGeometry(text, {
                 font: font,
                 size: 0.6,
                 height: 0.05,
@@ -94,8 +94,36 @@ function PenForm() {
             textMesh.rotation.set(0, 1.565, 0);
 
             model.add(textMesh);
+            setTextMesh(textMesh); // Сохраняем ссылку на текстовую меш-сетку
         });
     };
+
+    useEffect(() => {
+        if (textMesh) {
+            // Если текстовая меш-сетка уже существует, обновляем текст
+            const fontLoader = new FontLoader();
+            fontLoader.load('/fonts/Playfair Display_Regular.json', (font) => {
+                // Удаляем старую геометрию текста
+                textMesh.geometry.dispose();
+
+                // Создаем новую геометрию текста с обновленным текстом
+                const newTextGeometry = new TextGeometry(props.text, {
+                    font: font,
+                    size: 0.6,
+                    height: 0.05,
+                    curveSegments: 12,
+                    bevelEnabled: true,
+                    bevelThickness: 0.01,
+                    bevelSize: 0.02,
+                    bevelOffset: 0,
+                    bevelSegments: 5
+                });
+
+                // Обновляем геометрию текстовой меш-сетки
+                textMesh.geometry = newTextGeometry;
+            });
+        }
+    }, [props.text, textMesh]); // Зависимости: обновляем текст при изменении props.text или textMesh
 
     return <div id='penPreview' ref={containerRef} style={{ width: '100%', height: '400px' }}></div>;
 }
