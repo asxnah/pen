@@ -1,12 +1,12 @@
-import PenPreview from '../componets/exampleOfPen.js';
+import PenForm from '../componets/penForm.js';
 
 function Creator() {
 	return (
 		<>
 			<main className="container min-height-90vh p-4">
 				<div className="row">
-					<div className="col-12 col-md-6">
-						<PenPreview />
+					<div className="col-12 col-md-6 creator">
+						<PenForm />
 					</div>
 					<form className="col-12 col-md-6">
 						<div className="mb-3">

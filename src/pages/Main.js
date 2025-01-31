@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
+import PenPreview from '../componets/exampleOfPen';
 
 function Main() {
 	return (
-		<main className="mt-1 mt-md-4 min-height-90vh">
+		<main className="mt-1 mt-md-4">
 			<section className="p-2 py-md-3 px-md-5">
 				<p className="fs-1">
 					Ваше имя — ваша история, запечатленная в каждой ручке.
 				</p>
-				<p className="fst-italic">тут компонент-превью</p>
+				<p className="fst-italic">
+					<PenPreview ref={"penPreview"} />
+				</p>
 				<p>
 					PEN специализируется на создании уникальных именных ручек с
 					индивидуальной гравировкой. Мы помогаем запечатлеть вашу историю в
