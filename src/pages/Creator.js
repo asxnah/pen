@@ -45,15 +45,17 @@ function Creator() {
 			<main className="container min-height-90vh p-4">
 				<div className="row">
 					<div className="col-12 col-md-6 creator">
-						<PenForm />
+						<PenForm text={name}/>
 					</div>
 					<form className="col-12 col-md-6">
 						<div className="mb-3">
 							<label className="form-label">Ваше имя</label>
 							<input
-								type="email"
+								type="text"
 								className="form-control"
 								onChange={(e) => setName(e.target.value)}
+								value={name}
+								maxLength={20}
 							/>
 							<div id="emailHelp" className="form-text">
 								Это обязательное поле для оформления заказа.
