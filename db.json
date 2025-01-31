@@ -5,7 +5,7 @@
       "name": "Софья",
       "email": "sofia@example.com",
       "number": "8-123-456-78-90",
-      "status": "В процессе"
+      "status": "Готов"
     },
     {
       "id": "2",
@@ -19,49 +19,14 @@
       "name": "Раул",
       "email": "raul2005@example.com",
       "number": "8-200-520-05-20",
-      "status": "Доставлен"
+      "status": "Готов"
     },
     {
       "id": "m6kn54lzfbwjte58w",
       "name": "Иван Золо",
       "email": "zolo_best@eg.com",
       "number": "1-111-111-11-11",
-      "status": "В процессе"
-    },
-    {
-      "id": "m6kn54m0cy9mujho2",
-      "name": "Иван Золо",
-      "email": "zolo_best@eg.com",
-      "number": "1-111-111-11-11",
-      "status": "В процессе"
-    },
-    {
-      "id": "m6kn5q14z73tpkqwb",
-      "name": "Иван Золо",
-      "email": "zolo_best@eg.com",
-      "number": "1-111-111-11-11",
-      "status": "В процессе"
-    },
-    {
-      "id": "m6kn5q158qin4x1vl",
-      "name": "Иван Золо",
-      "email": "zolo_best@eg.com",
-      "number": "1-111-111-11-11",
-      "status": "В процессе"
-    },
-    {
-      "id": "m6kn5tvk9nabqmqus",
-      "name": "Иван Золо",
-      "email": "zolo_best@eg.com",
-      "number": "1-111-111-11-11",
-      "status": "В процессе"
-    },
-    {
-      "id": "m6kn5tvlxke2usdb8",
-      "name": "Иван Золо",
-      "email": "zolo_best@eg.com",
-      "number": "1-111-111-11-11",
-      "status": "В процессе"
+      "status": "Готов"
     }
   ]
 }
