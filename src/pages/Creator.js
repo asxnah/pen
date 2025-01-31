@@ -103,6 +103,7 @@ function Creator() {
 									id="fname"
 									value={name}
 									onChange={(e) => setName(e.target.value)}
+									required="true"
 								/>
 							</div>
 							<div className="mb-3">
@@ -115,6 +116,7 @@ function Creator() {
 									id="number"
 									value={number}
 									onChange={(e) => setNumber(e.target.value)}
+									required
 								/>
 							</div>
 							<div className="mb-3">
@@ -127,6 +129,7 @@ function Creator() {
 									id="email"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
+									required
 								/>
 							</div>
 						</div>
