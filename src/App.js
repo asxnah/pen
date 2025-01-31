@@ -8,15 +8,12 @@ import {
 import './App.css';
 import Creator from './pages/Creator.js';
 import Main from './pages/Main.js';
-import Admin from './pages/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh/Admin.js';
+import Admin from './pages/admin/Admin.js';
 
 function App() {
 	const NavEl = () => {
 		const location = useLocation();
-		if (
-			location.pathname !==
-			'/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh'
-		) {
+		if (location.pathname !== '/admin') {
 			return (
 				<div className="d-flex">
 					<Link to="/creator" className="btn btn-dark" type="submit">
@@ -63,10 +60,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Main />} />
 					<Route path="/creator" element={<Creator />} />
-					<Route
-						path="/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh"
-						element={<Admin />}
-					/>
+					<Route path="/admin" element={<Admin />} />
 				</Routes>
 			</div>
 
