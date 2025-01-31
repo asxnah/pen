@@ -1,10 +1,33 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	Link,
+	useLocation,
+} from 'react-router-dom';
 import './App.css';
 import Creator from './pages/Creator.js';
 import Main from './pages/Main.js';
 import Admin from './pages/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh/Admin.js';
 
 function App() {
+	const NavEl = () => {
+		const location = useLocation();
+		if (
+			location.pathname !==
+			'/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh'
+		) {
+			return (
+				<div className="d-flex">
+					<Link to="/creator" className="btn btn-dark" type="submit">
+						Заказать
+					</Link>
+				</div>
+			);
+		}
+		return null;
+	};
+
 	return (
 		<Router>
 			<div>
@@ -32,22 +55,18 @@ function App() {
 									</Link>
 								</li>
 							</ul>
-							<div className="d-flex">
-								<Link to="/creator" className="btn btn-dark" type="submit">
-									Заказать
-								</Link>
-							</div>
+							<NavEl />
 						</div>
 					</div>
 				</nav>
 
 				<Routes>
-					<Route path="/" element={<Main />}></Route>
-					<Route path="/creator" element={<Creator />}></Route>
+					<Route path="/" element={<Main />} />
+					<Route path="/creator" element={<Creator />} />
 					<Route
 						path="/sadjasoidhaskdhwiudgwidasgfsaguwqgqwiyggugdasdsagdh"
 						element={<Admin />}
-					></Route>
+					/>
 				</Routes>
 			</div>
 

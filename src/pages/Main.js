@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Main() {
 	return (
-		<main className="mt-1 mt-md-4">
+		<main className="mt-1 mt-md-4 min-height-90vh">
 			<section className="p-2 py-md-3 px-md-5">
 				<p className="fs-1">
 					Ваше имя — ваша история, запечатленная в каждой ручке.
