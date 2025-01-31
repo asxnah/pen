@@ -16,7 +16,7 @@ function PenPreview() {
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.set(5, 5, 5);
+        camera.position.set(5, 1, 0);
         camera.lookAt(0, 0, 0);
         
         const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -29,7 +29,7 @@ function PenPreview() {
         loader.load('/pen.glb', function (gltf) {
             console.log('Model loaded:', gltf);
             pen = gltf.scene;
-            pen.scale.set(0.5, 0.5, 0.4); // Начните с масштаба 1
+            pen.scale.set(0.7, 0.7, 0.6); // Начните с масштаба 1
             scene.add(pen);
             addTextToModel(pen); // Добавляем текст после загрузки модели
         }, undefined, function (error) {
@@ -74,7 +74,7 @@ function PenPreview() {
     const addTextToModel = (model) => {
         const fontLoader = new FontLoader();
         fontLoader.load('/fonts/Playfair Display_Regular.json', (font) => {
-            const textGeometry = new TextGeometry('Мега крутой супер дупер', {
+            const textGeometry = new TextGeometry('✨иван золо✨', {
                 font: font,
                 size: 0.6,
                 height: 0.05,
